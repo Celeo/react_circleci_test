@@ -9,6 +9,7 @@ jobs:
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
+      - run: node --version
       - run: yarn global add lerna
       - run: yarn global bin
       - run: $(yarn global bin)/lerna --help
